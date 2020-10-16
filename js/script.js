@@ -1,3 +1,12 @@
+// Password Characters Strings
+var numericChar = "1234567890";
+var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var specialChar = "~`@#$%^&*()_+=";
+
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
