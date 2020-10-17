@@ -4,6 +4,20 @@ var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialChar = "~`@#$%^&*()_+=";
 
+// Create a function to prompt the user to enter length of the new password
+function generatePassword () {
+  var desiredLength = prompt ("Enter the length of your new password. Your new password must be set between 8 and 128 characters.");
+
+  // Validate password length entry
+  if (desiredLength < 8 || desiredLength > 128 || desiredLength === "") {
+    alert ("That's an invalid password length. Your new password must be set between 8 and 128 characters.")
+    return generatePassword;
+  }
+}
+// Confirms and Prompts for user
+
+
+
 
 
 
