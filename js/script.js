@@ -1,9 +1,3 @@
-// Password Characters Strings
-var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
-var numericChar = "1234567890";
-var specialChar = "~`@#$%^&*()_+=";
-
 // Function to prompt the user to enter length of the new password
 function passwordLength () {
   var desiredLength = prompt ("Enter the length of your new password. Your new password must be set between 8 and 128 characters.");
@@ -20,8 +14,12 @@ function passwordLength () {
 
 // User to enter password characters
 function passwordCharSet () {
-
-  var characters = "";
+  // Password Characters Strings
+  var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+  var numericChar = "1234567890";
+  var specialChar = "~`@#$%^&*()_+=";
+  var pwCharacters = "";
 
   // User confirms for password
   var confirmUpperCase = confirm ("Would you like to include uppercase characters in your password?");
@@ -30,19 +28,19 @@ function passwordCharSet () {
   var confirmSpecialChar = confirm ("Would you like to include special characters in your password?");
 
   if (confirmUpperCase === true ) {
-    characters += upperCaseChar;
+    pwCharacters += upperCaseChar;
   }
 
   if (confirmLowerCase === true ) {
-    characters += lowerCaseChar;
+    pwCharacters += lowerCaseChar;
   }
 
   if (confirmNumeric === true ) {
-    characters += numericChar;
+    pwCharacters += numericChar;
   }
 
   if (confirmSpecialChar === true ) {
-    characters += specialChar;
+    pwCharacters += specialChar;
   }
 }
 
@@ -50,8 +48,10 @@ function passwordCharSet () {
 function generatePassword () {
   var password = "";
 
+  // Determines length of the password
   var lengthOfPassword = passwordLength();
 
+  // Determines character sets
   var pwCharacters = passwordCharSet();
   var pwCharactersLength = pwCharacters.length;
 
