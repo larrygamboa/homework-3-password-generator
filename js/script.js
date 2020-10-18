@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Function to prompt the user to enter length of the new password
 function pwLength () {
-  // Ask the user to enter length of passwprd
+  // Ask the user to enter length of password
   var desiredLength = prompt ("Enter the length of your new password. Your new password must be set between 8 and 128 characters.");
 
   // Password length validation
@@ -11,8 +11,6 @@ function pwLength () {
     alert ("That's an invalid password length. Your new password must be set between 8 and 128 characters.");
     return pwLength;
   }
-
-  desiredLength = Math.floor(Number(desiredLength));
   
   // Console log user's entry
   console.log (desiredLength);
@@ -23,11 +21,11 @@ function pwLength () {
 // User to enter password characters
 function enterChar () {
   // Password Characters Strings
+  var charInPassword = " ";
   var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
   var numericChar = "1234567890";
   var specialChar = "~`@#$%^&*()_+=";
-  var charInPassword = "";
 
   // User confirms for password
   var confirmUpperCase = confirm ("Would you like to include uppercase characters in your password?");
@@ -56,10 +54,15 @@ function enterChar () {
   console.log(confirmLowerCase);
   console.log(confirmNumeric);
   console.log(confirmSpecialChar);
+
+  return charInPassword;
 }
 
 // Function to generate the password
 function generatePassword () {
+  // Password string
+  var password = " ";
+
   // Call back to function for user to enter desired length of the password
   var lengthofPassword = pwLength ();
 
@@ -68,10 +71,10 @@ function generatePassword () {
 
   // Result of generated password
   for (var i = 0; i < lengthofPassword; i++) {
-    var result = passwordCharacters.charAt(Math.floor(Math.random() * lengthofPassword));
+    password = passwordCharacters.charAt(Math.floor(Math.random() * lengthofPassword));
   }
 
-  return result;
+  return password;
 }
 
 // Write password to the #password input
