@@ -1,3 +1,6 @@
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
 // Function to prompt the user to enter length of the new password
 function passwordLength () {
   // Ask the user to enter length of passwprd
@@ -21,7 +24,7 @@ function enterChar () {
   var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
   var numericChar = "1234567890";
   var specialChar = "~`@#$%^&*()_+=";
-  var pwCharacters = "";
+  var pwChar = "";
 
   // User confirms for password
   var confirmUpperCase = confirm ("Would you like to include uppercase characters in your password?");
@@ -30,41 +33,26 @@ function enterChar () {
   var confirmSpecialChar = confirm ("Would you like to include special characters in your password?");
 
   if (confirmUpperCase === true ) {
-    pwCharacters += upperCaseChar;
+    pwChar += upperCaseChar;
   }
 
   if (confirmLowerCase === true ) {
-    pwCharacters += lowerCaseChar;
+    pwChar += lowerCaseChar;
   }
 
   if (confirmNumeric === true ) {
-    pwCharacters += numericChar;
+    pwChar += numericChar;
   }
 
   if (confirmSpecialChar === true ) {
-    pwCharacters += specialChar;
+    pwChar += specialChar;
   }
 }
 
 // Function to generate the password
 function generatePassword () {
-  var result = "";
-
-  // Determines length of the password
-  var lengthOfPassword = passwordLength();
-
-  // Determines character sets
-  var pwCharacters = enterChar();
-  var pwCharactersLength = pwCharacters.length;
-
-  for (var i = 0; i < lengthOfPassword; i++) {
-    password += pwCharacters.charAt(Math.floor(Math.random() * pwCharactersLength));
-  }
-  return result;
-};
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+ 
+}
 
 // Write password to the #password input
 function writePassword() {
