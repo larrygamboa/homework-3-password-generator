@@ -60,16 +60,16 @@ function enterChar () {
 
 // Function to generate the password
 function generatePassword () {
-  // Result of generated password
-  var result = "";
-
   // Call back to function for user to enter desired length of the password
   var lengthofPassword = pwLength ();
 
   // Call back to function for user to enter password characters
   var passwordCharacters = enterChar ();
 
-
+  // Result of generated password
+  for (var i = 0; i < lengthofPassword; i++) {
+    var result = passwordCharacters.charAt(Math.floor(Math.random() * lengthofPassword));
+  }
 
   return result;
 }
