@@ -13,7 +13,9 @@ function passwordLength () {
     return passwordLength;
   }
 
+  desiredLength = Math.floor(Math.random(desiredLength));
 
+  return desiredLength;
 }
 
 // Confirms for user to enter password characters
