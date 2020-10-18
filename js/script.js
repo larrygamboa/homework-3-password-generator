@@ -1,4 +1,8 @@
 // Password Characters Strings
+var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+var numericChar = "1234567890";
+var specialChar = "~`@#$%^&*()_+=";
 
 // Function to prompt the user to enter length of the new password
 
