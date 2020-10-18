@@ -13,16 +13,41 @@ function passwordLength () {
     return passwordLength;
   }
 
-  desiredLength = Math.floor(Math.random(desiredLength));
+  desiredLength = Math.floor(Number(desiredLength));
 
   return desiredLength;
 }
 
 // Confirms for user to enter password characters
+function passwordCharSet () {
+  var confirmUpperCase = confirm ("Would you like to include uppercase characters in your password?");
+  var confirmLowerCase = confirm ("Would you like to include lowercase characters in your password?");
+  var confirmNumeric = confirm ("Would you like to include numeric characters in your password?");
+  var confirmSpecialChar = confirm ("Would you like to include special characters in your password?");
 
+  var characters = "";
+
+  if (confirmUpperCase === true ) {
+    characters += upperCaseChar;
+  }
+
+  if (confirmLowerCase === true ) {
+    characters += lowerCaseChar;
+  }
+
+  if (confirmNumeric === true ) {
+    characters += numericChar;
+  }
+
+  if (confirmSpecialChar === true ) {
+    characters += specialChar;
+  }
+}
 
 // Function to generate the password
+function generatePassword () {
 
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
