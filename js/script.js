@@ -13,6 +13,9 @@ function pwLength () {
   }
 
   desiredLength = Math.floor(Number(desiredLength));
+  
+  // Console log user's entry
+  console.log (desiredLength);
 
   return desiredLength;
 }
@@ -47,6 +50,12 @@ function enterChar () {
   if (confirmSpecialChar === true ) {
     charInPassword += specialChar;
   }
+
+  // Console log confirmation entries
+  console.log(confirmUpperCase);
+  console.log(confirmLowerCase);
+  console.log(confirmNumeric);
+  console.log(confirmSpecialChar);
 }
 
 // Function to generate the password
