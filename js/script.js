@@ -5,8 +5,21 @@ var numericChar = "1234567890";
 var specialChar = "~`@#$%^&*()_+=";
 
 // Function to prompt the user to enter length of the new password
+function passwordLength () {
+  var desiredLength = prompt ("Enter the length of your new password. Your new password must be set between 8 and 128 characters.");
+
+  if (desiredLength < 8 || desiredLength > 128 || desiredLength === "") {
+    alert ("That's an invalid password length. Your new password must be set between 8 and 128 characters.");
+    return passwordLength;
+  }
+
+
+}
 
 // Confirms for user to enter password characters
+
+
+// Function to generate the password
 
 
 // Assignment Code
