@@ -7,7 +7,7 @@ homework 3 password generator
 
 ## Purpose
 
-The purpose of the homework is to create a random password generator using methods JavaScript. The password generator runs in the browser and features a dynamic HTML page powered by JavaScript. The criteria is as follows:
+The purpose of the homework is to create a random password generator using JavaScript methods. The password generator runs in the browser and features a dynamic HTML page powered by JavaScript. The criteria is as follows:
 
 1) When the "Generate Password" is clicked, the user is prompted password criteria.
 2) The user is presented a password criteria to include the length of the password (between 8-128 characters).
