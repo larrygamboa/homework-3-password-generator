@@ -1,7 +1,9 @@
 // Function to prompt the user to enter length of the new password
 function passwordLength () {
+  // Ask the user to enter length of passwprd
   var desiredLength = prompt ("Enter the length of your new password. Your new password must be set between 8 and 128 characters.");
 
+  // Password length validation
   if (desiredLength < 8 || desiredLength > 128 || desiredLength === "") {
     alert ("That's an invalid password length. Your new password must be set between 8 and 128 characters.");
     return passwordLength;
@@ -13,7 +15,7 @@ function passwordLength () {
 }
 
 // User to enter password characters
-function passwordCharSet () {
+function enterChar () {
   // Password Characters Strings
   var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
@@ -45,23 +47,14 @@ function passwordCharSet () {
 }
 
 // Function to generate the password
-function generatePassword () {
-  var password = "";
-
-  // Determines length of the password
-  var lengthOfPassword = passwordLength();
-
-  // Determines character sets
-  var pwCharacters = passwordCharSet();
-  var pwCharactersLength = pwCharacters.length;
-
-  for (var i = 0; i < lengthOfPassword; i++ ) {
-    password += lengthOfPassword.charAt(Math.floor(Math.random() * pwCharactersLength));
+function generatePassword(length) {
+  var result = "";
+  var charactersLength = pwCharacters.length;
+  for ( var i = 0; i < length; i++ ) {
+      result += pwCharacters.charAt(Math.floor(Math.random() * charactersLength));
   }
-
-  return password;
-};
-
+  return result;
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
