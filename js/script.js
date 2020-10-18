@@ -47,14 +47,21 @@ function enterChar () {
 }
 
 // Function to generate the password
-function generatePassword(length) {
+function generatePassword () {
   var result = "";
-  var charactersLength = pwCharacters.length;
-  for ( var i = 0; i < length; i++ ) {
-      result += pwCharacters.charAt(Math.floor(Math.random() * charactersLength));
+
+  // Determines length of the password
+  var lengthOfPassword = passwordLength();
+
+  // Determines character sets
+  var pwCharacters = enterChar();
+  var pwCharactersLength = pwCharacters.length;
+
+  for (var i = 0; i < lengthOfPassword; i++) {
+    password += pwCharacters.charAt(Math.floor(Math.random() * pwCharactersLength));
   }
   return result;
-}
+};
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
