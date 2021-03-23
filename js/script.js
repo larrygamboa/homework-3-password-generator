@@ -1,33 +1,39 @@
 //Global Scope Password
 var password = "";
 
-var generatePassword = function() {
+var generatePassword = function () {
   // Call in Global Password here to send out at end
   password = "";
 
   //Create a function that will ask user for length of password. Note: Must be between 8 and 128 Chara long
-  var lengthPassword = passwordLength();
+  var lengthPassword = pwLength();
 
   //Create a function that will determine all inclusions for Character Sets
-  var passwordInclusions = charaInclusions();
+  var passwordInclusions = enterChar();
   var passwordInclusionsLength = passwordInclusions.length;
 
   for (var i = 0; i < lengthPassword; i++) {
-    password += passwordInclusions.charAt(Math.floor(Math.random() * passwordInclusionsLength));
+    password += passwordInclusions.charAt(
+      Math.floor(Math.random() * passwordInclusionsLength)
+    );
   }
 
   return password;
 };
 
 //This is the function that will prompt for **password length**
-var passwordLength = function() {
+var pwLength = function () {
   //First, lets ask the user for the length of the password using a prompt
-  var lengthPass = prompt("Enter Desired Length of New Password. Must Be Between 8 and 128 Characters Long.");
+  var lengthPass = prompt(
+    "Enter the length of your new password. Your new password must be set between 8 and 128 characters."
+  );
 
   //Next, lets validate the user input(Whether user entered invalid length or entered nothing at all)
   if (lengthPass < 8 || lengthPass > 128 || lengthPass === "") {
-    alert("Invalid Length Entry. Length Must Be Between 8 and 128 Characters Long.")
-    return passwordLength;
+    alert(
+      "That's an invalid password length. Your new password must be set between 8 and 128 characters."
+    );
+    return pwLength;
   }
 
   //This turns string into number. Note:refer to documentation if im still confused later.
@@ -35,42 +41,51 @@ var passwordLength = function() {
 
   //This will send data from this function to layout function!
   return lengthPass;
-}
+};
 
 //Function That will determine included Character sets
-var charaInclusions = function() {
+var enterChar = function () {
   //String to send back inclusions at end
   var passwordInclusions = "";
 
   //Character Sets
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var specialChara = "~`!@#$%^&*+<?/;:(=)|{";
+  var lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+  var upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numericChar = "0123456789";
+  var specialChar = "~`!@#$%^&*+<?/;:(=)|{";
 
-  //Ask to include characters(Confirms or Prompts?)
-  var confirmLower = confirm("Include Lower Case Characters?");
-  var confirmUpper = confirm("Include Upper Case Characters");
-  var confirmNumber = confirm("Inlcude Numbers?");
-  var confirmSpecial = confirm("Include Special Characters?");
+  // User confirms for password
+  var confirmLowerCase = confirm(
+    "Would you like to include lower case characters to your password?"
+  );
+  var confirmUpperCase = confirm(
+    "Would you like to include upper case characters to your password?"
+  );
+
+  var confirmNumeric = confirm(
+    "Would you like to include numerical characters to your password?"
+  );
+  var confirmSpecialChar = confirm(
+    "Would you like to include special characters to your password?"
+  );
 
   //Validate Selections
-  if (confirmLower == true) {
-    passwordInclusions += lowerCase;
+  if (confirmLowerCase == true) {
+    passwordInclusions += lowerCaseChar;
   }
-  if (confirmUpper == true) {
-    passwordInclusions += upperCase;
+  if (confirmUpperCase == true) {
+    passwordInclusions += upperCaseChar;
   }
-  if (confirmNumber == true) {
-    passwordInclusions += numbers;
+  if (confirmNumeric == true) {
+    passwordInclusions += numericChar;
   }
-  if (confirmSpecial == true) {
-    passwordInclusions += specialChara;
+  if (confirmSpecialChar == true) {
+    passwordInclusions += specialChar;
   }
 
   //Send back results
   return passwordInclusions;
-}
+};
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -79,9 +94,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
-  passwordText.value = password;
 
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
