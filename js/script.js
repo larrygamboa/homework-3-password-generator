@@ -5,7 +5,7 @@ var generatePassword = function () {
   // Call in Global Password here to send out at end
   password = "";
 
-  //Create a function that will ask user for length of password. Note: Must be between 8 and 128 Chara long
+  //Create a function that will ask user for length of password that is between 8 and 128 characters long
   var lengthPassword = pwLength();
 
   //Create a function that will determine all inclusions for Character Sets
