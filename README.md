@@ -1,9 +1,9 @@
 # homework-3-password-generator
 homework 3 password generator
 
-**Preview link**: https://larrygamboa.github.io/homework-3-password-generator/
+**Preview link**: https://larrygamboa.github.io/password-generator/
 
-**GitHub repository**: https://github.com/larrygamboa/homework-3-password-generator
+**GitHub repository**: https://github.com/larrygamboa/password-generator
 
 ## Purpose
 
